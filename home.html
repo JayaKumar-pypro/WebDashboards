@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="customscrollbar">
+<head>
+  <title>MyMart - Dashbboard</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <!--JQuery and xlsx-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--Highcharts library non commercial license-->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+ <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+ <!--Native CSS and JS-->
+  <link rel="stylesheet" href="CSS/Dashboard.css">
+  <script src="JS/Dashboard.js"></script>
+  <!--IG Grid-->
+  <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.2/latest/js/infragistics.lob.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2023.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2023.2/latest/css/structure/infragistics.css" rel="stylesheet">
+</head>
+<body>
+<div id="MainContainer">
+<table id="layoutcontainer" border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td width="100%" colspan="2">
+                <div id="headerrow" style="padding:10px;" class="textCenter theme">
+				<span class="headertext"><i>MyMart Analysis</i></span>
+				</div>
+            </td>
+        </tr>
+        <tr>
+            <td width="15%">
+                <div id="menu" class="theme">
+				    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tbody>
+					<tr><td>
+					<div id="DashboardClick" class="tabmenu" onclick="dataview('dashboardarea')">
+					<img src="assets/chart.png" style="padding: 0px 10px 0px 20px;vertical-align: bottom;" height="20px"/>
+					<span>Dashboard</span></div>
+					</td>
+					</tr>
+					<tr><td>
+                    <div id="TableClick" class="tabmenu" onclick="dataview('tablearea')">
+					<img src="assets/grid.png" style="padding: 0px 10px 0px 20px;vertical-align: bottom;" height="20px"/>
+					<span>Raw Data</span></div>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+				</div>
+            </td>
+            <td width="75%" style="background:#f0f0f0;">
+                <div id="dashboardarea" style="display: none;overflow-y:auto;">
+                    <table border="0" cellspacing="5" cellpadding="0" width="100%">
+					<tbody>
+					<tr>
+					<td width="30%">
+					<div id="chart1" class="chartArea">
+					<div id="chart_1_donut" style="height:245px;"></div>
+					</div>
+					</td>
+					<td width="30%">
+					<div id="chart5" class="chartArea">
+					<div id="chart_2_vbar" style="height:245px;"></div>
+					</div>
+					</td>
+					<td width="40%">
+					<div id="chart2" class="chartArea">
+					<div id="chart_3_vbar" style="height:245px;"></div>
+					</div>
+					</td>
+					</tr>
+					<tr>
+					<td width="100%" colspan="3">
+					<div id="chart3" class="chartArea1">
+					<div id="chart_4_line" style="height:345px;"></div>
+					</div>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+                </div>
+				<div id="tablearea" style="display: none;width:100%">
+				    <table id="salesdetails"></table>
+				</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<style>
+.ui-iggrid .ui-iggrid-header, .ui-iggrid table tbody td, .ui-iggrid table th {
+    font-size: 12px;
+}
+.ui-iggrid .ui-iggrid-footer, .ui-iggrid .ui-iggrid-toolbar {
+    font-size: 12px;
+}
+.ui-igedit-dropdown .ui-igedit-listitem {
+    font-size: 12px !important;
+}
+</style>
+</body>
+</html>
