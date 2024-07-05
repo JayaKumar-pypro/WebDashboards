@@ -85,7 +85,11 @@ function chart_1_donut(JsonData) {
 			type: 'pie'
 		},
 		title: {
-			text: null
+			text: 'Sales by Region',
+			style: {
+				fontSize: '12px',
+				fontWeight: '500'
+			}
 		},
 		credits: {
 			enabled: false
@@ -128,7 +132,11 @@ function chart_2_bar(JsonData) {
 			spacingTop: 10,
 		},
 		title: {
-			text: null
+			text: 'Sales Vs Profit',
+			style: {
+				fontSize: '12px',
+				fontWeight: '500'
+			}
 		},
 		xAxis: {
 			categories: ['Sales', 'Profit'],
@@ -163,7 +171,7 @@ function chart_2_bar(JsonData) {
 			lineWidth: 0
 		},
 		tooltip: {
-			enabled: false
+			enabled: true
 		},
 		plotOptions: {
 			column: {
@@ -217,7 +225,11 @@ function chart_3_bar(JsonData) {
 			spacingTop: 10,
 		},
 		title: {
-			text: null
+			text: 'Sales by Category',
+			style: {
+				fontSize: '12px',
+				fontWeight: '500'
+			}
 		},
 		xAxis: {
 			categories: [...new Set(Segment_sales.keys())],
@@ -252,7 +264,10 @@ function chart_3_bar(JsonData) {
 			lineWidth: 0
 		},
 		tooltip: {
-			enabled: false
+			enabled: true,
+			formatter: function() {
+				return this.series.name + ': $' + Highcharts.numberFormat(this.y, 0, '.', ',');
+			}
 		},
 		plotOptions: {
 			bar: {
@@ -312,7 +327,11 @@ function chart_4_line(JsonData) {
 			spacingTop: 10,
 		},
 		title: {
-			text: null
+			text: 'Sales by State',
+			style: {
+				fontSize: '12px',
+				fontWeight: '500'
+			}
 		},
 		xAxis: {
 			categories: Category,
